@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* variables */
+:root {
+  --bg-color: rgb(127, 255, 212);
+  --btn-color: rgb(233, 233, 237);
+}
+
+/* header */
+header {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header div.logo-header {
+  display: flex;
+}
+
+header img.logo {
+  width: 6%;
+  height: 40%;
+  margin-left: 2em;
+}
+
+header h1 {
+  font-weight: bolder;
+  font-size: 2.5em;
+  margin-left: 0.5em;
+}
+
+header div.input {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  font-size: 1.2em;
+}
+
+div.input #difficulty {
+  width: 25%;
+  background-color: var(--btn-color);
+  border-radius: 5px;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+div.input button {
+  margin-right: 1.5em;
+  margin-left: 0.5em;
+  padding: 0.1em 1.9em;
+  border-radius: 5px;
+  background-color: var(--btn-color);
+  cursor: pointer;
+}
+
+/* main */
+main div.main-container {
+  background-color: var(--bg-color);
+  height: 85vh;
+  position: relative;
+}
+
+#gridContainer {
+  width: 60vh;
+  height: 60vh;
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.square {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* square dimensions */
+.hidden {
+  display: none;
+}
+.hidden.active {
+  display: block;
+}
+
+.easy {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+
+.medium {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.hard {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
+.blue {
+  background-color: blue;
+}
+
+.violet {
+  background-color: violet;
+}
+/* footer */
+footer {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+footer p {
+  margin-left: 1.5em;
+}
