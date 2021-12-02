@@ -33,8 +33,9 @@ playBtn.addEventListener ('click', function ()
     
     // creo un array dove pushare i numeri bomba
     let arrayEasy = [];
+    x = 0;
     // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. 
-    for(let x = 0; x < 16; x++){
+    while (arrayEasy.length = 16) {
       let num = getRndInteger(1, numberSquareEasy);
       // console.log(num);
       arrayEasy.includes(num);
@@ -43,8 +44,11 @@ playBtn.addEventListener ('click', function ()
       if (arrayEasy.includes(num) == false) {
        arrayEasy.push(num); 
       }   
-       
+      x++;
     }
+
+       
+   
     //stamparli
     console.log('Earray', arrayEasy);
    
