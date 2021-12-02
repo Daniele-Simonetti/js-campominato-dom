@@ -32,10 +32,19 @@ playBtn.addEventListener ('click', function ()
       // console.log(arrayEasy);
       console.log(num);
       // arrayEasy.push(num); 
-      if (find == false) {
-        arrayEasy.push(num); 
-      }
+      // arrayEasy.push(num); 
       arrayEasy.includes(num);
+      console.log(arrayEasy.includes(num));
+      arrayEasy.push(num);
+      for (let index = 0; index < arrayEasy.length; index++) {
+        find = false;
+        if (find == true) {
+          arrayEasy.splice(num);
+        } else {
+          // arrayEasy.push(num);
+        }
+        
+      }
     }
     //stamparli
     console.log('Earray', arrayEasy);
