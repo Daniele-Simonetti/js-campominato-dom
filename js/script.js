@@ -70,23 +70,45 @@ playBtn.addEventListener ('click', function ()
     const numberSquareHard = rowHard * colHard;
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareHard; i++) {
-      const square = document.createElement('div');
+      let square = document.createElement('div');
       square.classList.add('square', 'hard');
       // console.log(square);
       square.innerHTML = i;
       gridContainer.append(square);
-
+      
       // se clicco sullo square questo cambia colore
       square.addEventListener('click', function () {
         const element = this;
         element.classList.add('blue');
         console.log(element.classList);
+
       });
     }
   }
-})
+});
 
 // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. :bomba:
 // I numeri nella lista delle bombe non possono essere duplicati.
 // In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina, altrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle. La partita termina quando il giocatore clicca su una bomba o raggiunge il numero massimo possibile di numeri consentiti. Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una b.
+
+// creo un array vuoto in cui pushare 16 numeri da 1 a 100 in modo casuale e che siano unici
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+for(let i = 0; i < 1; i++){
+  let array = [];
+  for(let x = 0; x < 16; x++){
+    let num = getRndInteger(1, 100);
+    console.log(num);
+    if (num != array[x]) {
+      //metterli in un array
+      array.push(num);
+      
+    } 
+  }
+  //stamparli
+  console.log(array);
+}
+
 
