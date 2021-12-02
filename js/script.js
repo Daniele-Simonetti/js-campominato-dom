@@ -35,15 +35,11 @@ playBtn.addEventListener ('click', function ()
       // arrayEasy.push(num); 
       arrayEasy.includes(num);
       console.log(arrayEasy.includes(num));
-      arrayEasy.push(num);
-      for (let index = 0; index < arrayEasy.length; index++) {
-        find = false;
-        if (find == true) {
-          arrayEasy.splice(num);
-        } else {
-          // arrayEasy.push(num);
-        }
-        
+    
+      if (arrayEasy.includes(num) == false) {
+        arrayEasy.push(num);
+      } else {
+        arrayEasy.push(getRndInteger(1, numberSquareEasy));
       }
     }
     //stamparli
