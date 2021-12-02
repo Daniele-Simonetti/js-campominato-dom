@@ -5,9 +5,25 @@
 
 
 // FUNZIONI
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+function generateBoombs(min, max) {
+  // creo un array dove pushare i numeri bomba
+  const bombs = [];
+  // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. 
+  while(bombs.length < 16){
+    const bomb = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (bombs.includes(bomb)) {
+      
+    } else {
+      bombs.push(bomb);
+    }
+  }
+  return bombs;
 }
+
+// let bombe = generateBoombs (1, 16);
+// console.log(bombe);
+// /FUNZIONI
+
 // prendo il bottone per avviare lo script
 const playBtn = document.getElementById('play');
 
@@ -30,24 +46,6 @@ playBtn.addEventListener ('click', function ()
     const rowEasy = 10;
     const colEasy = 10;
     const numberSquareEasy = rowEasy * colEasy;
-    
-    // creo un array dove pushare i numeri bomba
-    let arrayEasy = [];
-    // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. 
-    for(let x = 0; x < 16; x++){
-      let num = getRndInteger(1, numberSquareEasy);
-      // console.log(num);
-      arrayEasy.includes(num);
-      console.log(arrayEasy.includes(num));
-      while (arrayEasy.length = 16) {
-        // I numeri nella lista delle bombe non possono essere duplicati.
-        if (arrayEasy.includes(num) == false) {
-         arrayEasy.push(num); 
-        }   
-      }
-    }
-    //stamparli
-    console.log('Earray', arrayEasy);
    
     // seleziono il mio container per creargli all'interno dei div
     document.getElementById('gridConatiner');
@@ -73,15 +71,6 @@ playBtn.addEventListener ('click', function ()
     const colMedium = 9;
     const numberSquareMedium = rowMedium * colMedium;
 
-    let arrayMedium = [];
-      for(let x = 0; x < 16; x++){
-        let num = getRndInteger(1, numberSquareMedium);
-        console.log(num);
-        arrayMedium.push(num);
-      }
-    //stamparli
-    console.log('Marray', arrayMedium);
-
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareMedium; i++) {
       const square = document.createElement('div');
@@ -101,15 +90,6 @@ playBtn.addEventListener ('click', function ()
     const rowHard = 7;
     const colHard = 7;
     const numberSquareHard = rowHard * colHard;
-
-    let arrayHard = [];
-    for(let x = 0; x < 16; x++){
-      let num = getRndInteger(1, numberSquareHard);
-      console.log(num);
-      arrayHard.push(num);
-    }
-  //stamparli
-  console.log('Harray', arrayHard);
 
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareHard; i++) {
