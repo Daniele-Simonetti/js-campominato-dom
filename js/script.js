@@ -20,7 +20,7 @@ function generateBoombs(min, max) {
   return bombs;
 }
 
-// let bombe = generateBoombs (1, 16);
+// let bombe = generateBoombs (1, 81);
 // console.log(bombe);
 // /FUNZIONI
 
@@ -46,6 +46,8 @@ playBtn.addEventListener ('click', function ()
     const rowEasy = 10;
     const colEasy = 10;
     const numberSquareEasy = rowEasy * colEasy;
+    let bombe = generateBoombs (1, 100);
+    console.log(bombe);
    
     // seleziono il mio container per creargli all'interno dei div
     document.getElementById('gridConatiner');
@@ -70,6 +72,8 @@ playBtn.addEventListener ('click', function ()
     const rowMedium = 9;
     const colMedium = 9;
     const numberSquareMedium = rowMedium * colMedium;
+    let bombe = generateBoombs (1, 81);
+    console.log(bombe);
 
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareMedium; i++) {
@@ -90,6 +94,8 @@ playBtn.addEventListener ('click', function ()
     const rowHard = 7;
     const colHard = 7;
     const numberSquareHard = rowHard * colHard;
+    let bombe = generateBoombs (1, 49);
+    console.log(bombe);
 
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareHard; i++) {
@@ -103,8 +109,6 @@ playBtn.addEventListener ('click', function ()
       square.addEventListener('click', function () {
         const element = this;
         element.classList.add('blue');
-        console.log(element.classList);
-
       });
     }
   }
