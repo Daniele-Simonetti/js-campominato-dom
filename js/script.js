@@ -25,7 +25,21 @@ playBtn.addEventListener ('click', function ()
     const rowEasy = 10;
     const colEasy = 10;
     const numberSquareEasy = rowEasy * colEasy;
-    
+
+    let arrayEasy = [];
+    for(let x = 0; x < 16; x++){
+      let num = getRndInteger(1, numberSquareEasy);
+      // console.log(arrayEasy);
+      console.log(num);
+      // arrayEasy.push(num); 
+      if (find == false) {
+        arrayEasy.push(num); 
+      }
+      arrayEasy.includes(num);
+    }
+    //stamparli
+    console.log('Earray', arrayEasy);
+   
     // seleziono il mio container per creargli all'interno dei div
     document.getElementById('gridConatiner');
     
@@ -49,6 +63,16 @@ playBtn.addEventListener ('click', function ()
     const rowMedium = 9;
     const colMedium = 9;
     const numberSquareMedium = rowMedium * colMedium;
+
+    let arrayMedium = [];
+      for(let x = 0; x < 16; x++){
+        let num = getRndInteger(1, numberSquareMedium);
+        console.log(num);
+        arrayMedium.push(num);
+      }
+    //stamparli
+    console.log('Marray', arrayMedium);
+
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareMedium; i++) {
       const square = document.createElement('div');
@@ -68,6 +92,16 @@ playBtn.addEventListener ('click', function ()
     const rowHard = 7;
     const colHard = 7;
     const numberSquareHard = rowHard * colHard;
+
+    let arrayHard = [];
+    for(let x = 0; x < 16; x++){
+      let num = getRndInteger(1, numberSquareHard);
+      console.log(num);
+      arrayHard.push(num);
+    }
+  //stamparli
+  console.log('Harray', arrayHard);
+
     hidden.classList.add('active');
     for (let i = 1; i <= numberSquareHard; i++) {
       let square = document.createElement('div');
@@ -96,19 +130,15 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-for(let i = 0; i < 1; i++){
-  let array = [];
-  for(let x = 0; x < 16; x++){
-    let num = getRndInteger(1, 100);
-    console.log(num);
-    if (num != array[x]) {
-      //metterli in un array
-      array.push(num);
-      
-    } 
-  }
-  //stamparli
-  console.log(array);
-}
+// for(let i = 0; i < 1; i++){
+//   let array = [];
+//   for(let x = 0; x < 16; x++){
+//     let num = getRndInteger(1, 100);
+//     console.log(num);
+//     array.push(num);
+//   }
+//   //stamparli
+//   console.log(array);
+// }
 
 
